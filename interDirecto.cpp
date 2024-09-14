@@ -19,6 +19,24 @@ void interdirder(int arr[], int a){
 	cout<<endl;
 }
 
+void interdirizq(int arr[], int b){
+    for(int i=0; i<b-1; i++){
+        for(int j=b-1; j>i; j--){
+            if(arr[j]<arr[j-1]){
+                int aux;
+				aux=arr[j-1];
+                arr[j-1]=arr[j];
+                arr[j]=aux;
+            }
+        }
+    }
+    cout<<endl;
+    for(int i=0; i<b; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+
 int main (){
 	
 	int n, arr[100], op;
@@ -46,7 +64,7 @@ int main (){
         		interdirder(arr, n);
         		break;
         	case 2:
-			
+				interdirizq(arr, n);
 				break;
 			case 3:	
 			
