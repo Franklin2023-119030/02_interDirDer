@@ -5,8 +5,7 @@ void interdirder(int arr[], int a){
 	for(int i=0; i<a-1; i++){
 		for(int j=i+1; j<a; j++){
 			if(arr[i]>arr[j]){
-				int aux;
-				aux=arr[i];
+				int aux=arr[i];
 				arr[i]=arr[j];
 				arr[j]=aux;
 			}
@@ -23,8 +22,7 @@ void interdirizq(int arr[], int b){
     for(int i=0; i<b-1; i++){
         for(int j=b-1; j>i; j--){
             if(arr[j]<arr[j-1]){
-                int aux;
-				aux=arr[j-1];
+                int aux=arr[j-1];
                 arr[j-1]=arr[j];
                 arr[j]=aux;
             }
@@ -35,6 +33,33 @@ void interdirizq(int arr[], int b){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
+}
+
+void interdircen(int arr[], int c){
+	int m=c/2;
+	for(int i=0; i<m; i++){
+		for(int j=i+1; j<=m; j++){
+			if(arr[i]>arr[j]){
+				int aux=arr[i];
+				arr[i]=arr[j];
+				arr[j]=aux;
+			}
+		}
+	}
+	for(int i=m; i<c-1; i++){
+		for(int j=i+1; j<c; j++){
+			if(arr[i]>arr[j]){
+				int aux=arr[i];
+				arr[i]=arr[j];
+				arr[j]=aux;
+			}
+		}
+	}
+	cout<<endl;
+	for(int i=0;i<c; i++){
+		cout<<arr[i]<<" ";
+	}
+	cout<<endl;
 }
 
 int main (){
@@ -52,7 +77,7 @@ int main (){
 		cout<<endl;
 		cout<<"1) Intercambio directo por la derecha. "<<endl;
     	cout<<"2) Intercambio directo por la izquierda. "<<endl; 
-        cout<<"3) Intercambio directo con senal. "<<endl;
+        cout<<"3) Intercambio directo por el centro. "<<endl;
         cout<<"4) Intercambio directo bidireccional. "<<endl;
         cout<<"5) Salir del programa. "<<endl;
         cout<<endl;
@@ -67,7 +92,7 @@ int main (){
 				interdirizq(arr, n);
 				break;
 			case 3:	
-			
+				interdircen(arr, n);
         		break;
         	case 4:
         		
