@@ -102,6 +102,8 @@ void interdirbi(int arr[], int d){
 int main (){
 	
 	int n, arr[100], op;
+	cout<<endl;
+	cout<<"*****************BIENVENIDO AL PROGRAMA*****************"<<endl<<endl;
 	cout<<"Ingrese la cantidad de elementos que desea: ";
 	cin>>n;
 	
@@ -114,7 +116,7 @@ int main (){
 		cout<<endl;
 		cout<<"1) Intercambio directo por la derecha. "<<endl;
     	cout<<"2) Intercambio directo por la izquierda. "<<endl; 
-        cout<<"3) Intercambio directo por el centro. "<<endl;
+        cout<<"3) Intercambio directo con senial. "<<endl;
         cout<<"4) Intercambio directo bidireccional. "<<endl;
         cout<<"5) Salir del programa. "<<endl;
         cout<<endl;
