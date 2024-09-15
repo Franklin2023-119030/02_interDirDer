@@ -36,30 +36,25 @@ void interdirizq(int arr[], int b){
 }
 
 void interdircen(int arr[], int c){
-	int m=c/2;
-	for(int i=0; i<m; i++){
-		for(int j=i+1; j<=m; j++){
-			if(arr[i]>arr[j]){
-				int aux=arr[i];
-				arr[i]=arr[j];
-				arr[j]=aux;
+		int cen=1;
+		int i=0;
+		while(i<c-1 && cen==1){
+			cen=0;
+			for(int j=0; j<c-i-1;j++){
+				if(arr[j]>arr[j+1]){
+					int aux=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=aux;
+					cen=1;
+				}
 			}
+			i++;
 		}
-	}
-	for(int i=m; i<c-1; i++){
-		for(int j=i+1; j<c; j++){
-			if(arr[i]>arr[j]){
-				int aux=arr[i];
-				arr[i]=arr[j];
-				arr[j]=aux;
-			}
+		cout<<endl;
+		for(int i=0; i<c; i++){
+			cout<<arr[i]<<" ";
 		}
-	}
-	cout<<endl;
-	for(int i=0;i<c; i++){
-		cout<<arr[i]<<" ";
-	}
-	cout<<endl;
+		cout<<endl;
 }
 
 void interdirbi(int arr[], int d){
