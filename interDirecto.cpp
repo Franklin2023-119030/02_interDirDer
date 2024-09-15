@@ -62,6 +62,43 @@ void interdircen(int arr[], int c){
 	cout<<endl;
 }
 
+void interdirbi(int arr[], int d){
+	bool cambio=true;
+	int inicio=0;
+	int fin=d-1;
+	
+	while(cambio){
+		cambio=false;
+		for(int i=inicio; i<fin; i++){
+			if(arr[i]>arr[i+1]){
+				int aux=arr[i];
+				arr[i]=arr[i+1];
+				arr[i+1]=aux;
+				cambio=true;
+			}
+		}
+		if(!cambio)
+		break;
+		fin--;
+		
+		cambio=false;
+		for(int i=fin; i>inicio; i--){
+			if(arr[i]<arr[i-1]){
+				int aux=arr[i];
+				arr[i]=arr[i-1];
+				arr[i-1]=aux;
+				cambio=true;
+			}
+		}
+		inicio++;
+	}
+	cout<<endl;
+	for(int i=0; i<d; i++){
+		cout<<arr[i]<<" ";
+	}
+	cout<<endl;
+}
+
 int main (){
 	
 	int n, arr[100], op;
@@ -95,7 +132,7 @@ int main (){
 				interdircen(arr, n);
         		break;
         	case 4:
-        		
+        		interdirbi(arr, n);
         		break;
         	default:
         		
