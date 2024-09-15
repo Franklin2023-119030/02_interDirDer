@@ -134,8 +134,13 @@ int main (){
         	case 4:
         		interdirbi(arr, n);
         		break;
+        	case 5:
+        		cout<<endl; 
+        		cout<<"-------------------SALIENDO DEL PROGRAMA-------------------"<<endl;
+        		return 0;
         	default:
-        		
+        		cout<<endl;
+        		cout<<"Opcion incorrecta, porfavor ingrese una opcion valida."<<endl;
         		break;
 		}
 	}
