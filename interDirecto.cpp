@@ -135,6 +135,36 @@ void Inserciondirecta(int arr[], int f){
 	cout<<endl;
 }
 
+void Insercionbinaria(int arr[], int g){
+	int izq; 
+	int der;
+	int m; 
+	int j;
+	for(int i=2; i<g; i++){
+		int aux;
+		aux=arr[i];
+		izq=1;
+		der=i-1;
+		while(izq<=der){
+			m=((izq+der)/2);
+			if(aux<arr[m]){
+				der=m-1;
+			}else
+			izq=m+1;
+		}
+		j=i-1;
+	while(j>=izq){
+		arr[j+1]=arr[j];
+		j=j-1;
+	}
+	arr[izq]=aux;
+	}
+		cout<<endl;
+	for(int i=0; i<g; i++){
+		cout<<arr[i]<<" ";
+	}
+	cout<<endl;
+}
 int main(){
 	
 	int n, arr[100], op;
@@ -156,6 +186,7 @@ int main(){
         cout<<"4) Intercambio directo bidireccional. "<<endl;
         cout<<"5) Intercambio Seleccion directa. "<<endl;
         cout<<"6) Intercambio Insercion directa. "<<endl;
+        cout<<"7) Intercambio Insercion binaria. "<<endl;
 		cout<<"7) Salir del programa. "<<endl;
         cout<<endl;
         cout<<"Ingrese la opcion que desea: ";
@@ -181,6 +212,9 @@ int main(){
         		Inserciondirecta(arr, n);
         		break;
         	case 7:
+        		Insercionbinaria(arr, n);
+        		break;
+        	case 8:
         		cout<<endl; 
         		cout<<"-------------------SALIENDO DEL PROGRAMA-------------------"<<endl;
         		return 0;
