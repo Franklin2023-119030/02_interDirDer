@@ -94,6 +94,28 @@ void interdirbi(int arr[], int d){
 	cout<<endl;
 }
 
+void Selecciondirecta(int arr[], int e){
+	int menor;
+	int k;
+	for(int i=0; i<e-1; i++){
+		menor=arr[i];
+		k=i;
+		for(int j=i+1; j<e; j++){
+			if(arr[j]<menor){
+			menor=arr[j];
+			k=j;
+			}
+		}
+		arr[k]=arr[i];
+		arr[i]=menor;
+	}
+	cout<<endl;
+	for(int i=0; i<e; i++){
+		cout<<arr[i]<<" ";
+	}
+	cout<<endl;
+}
+
 int main (){
 	
 	int n, arr[100], op;
@@ -113,7 +135,8 @@ int main (){
     	cout<<"2) Intercambio directo por la izquierda. "<<endl; 
         cout<<"3) Intercambio directo con senial. "<<endl;
         cout<<"4) Intercambio directo bidireccional. "<<endl;
-        cout<<"5) Salir del programa. "<<endl;
+        cout<<"5) Seleccion directa. "<<endl;
+		cout<<"6) Salir del programa. "<<endl;
         cout<<endl;
         cout<<"Ingrese la opcion que desea: ";
         cin>>op;
@@ -132,6 +155,9 @@ int main (){
         		interdirbi(arr, n);
         		break;
         	case 5:
+        		Selecciondirecta(arr, n);
+        		break;
+        	case 6:
         		cout<<endl; 
         		cout<<"-------------------SALIENDO DEL PROGRAMA-------------------"<<endl;
         		return 0;
