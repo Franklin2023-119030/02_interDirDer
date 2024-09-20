@@ -116,7 +116,26 @@ void Selecciondirecta(int arr[], int e){
 	cout<<endl;
 }
 
-int main (){
+void Inserciondirecta(int arr[], int f){
+	int k;
+	for(int i=2; i<f; i++){
+		int aux;
+		aux=arr[i];
+		k=i-1;
+		while(k>0 && aux<arr[k]){
+			arr[k+1]=arr[k];
+			k=k-1;
+		}
+		arr[k+1]=aux;
+	}
+	cout<<endl;
+	for(int i=0; i<f; i++){
+		cout<<arr[i]<<" ";
+	}
+	cout<<endl;
+}
+
+int main(){
 	
 	int n, arr[100], op;
 	cout<<endl;
@@ -135,8 +154,9 @@ int main (){
     	cout<<"2) Intercambio directo por la izquierda. "<<endl; 
         cout<<"3) Intercambio directo con senial. "<<endl;
         cout<<"4) Intercambio directo bidireccional. "<<endl;
-        cout<<"5) Seleccion directa. "<<endl;
-		cout<<"6) Salir del programa. "<<endl;
+        cout<<"5) Intercambio Seleccion directa. "<<endl;
+        cout<<"6) Intercambio Insercion directa. "<<endl;
+		cout<<"7) Salir del programa. "<<endl;
         cout<<endl;
         cout<<"Ingrese la opcion que desea: ";
         cin>>op;
@@ -158,6 +178,9 @@ int main (){
         		Selecciondirecta(arr, n);
         		break;
         	case 6:
+        		Inserciondirecta(arr, n);
+        		break;
+        	case 7:
         		cout<<endl; 
         		cout<<"-------------------SALIENDO DEL PROGRAMA-------------------"<<endl;
         		return 0;
