@@ -159,8 +159,37 @@ void Insercionbinaria(int arr[], int g){
 	}
 	arr[izq]=aux;
 	}
-		cout<<endl;
+	cout<<endl;
 	for(int i=0; i<g; i++){
+		cout<<arr[i]<<" ";
+	}
+	cout<<endl;
+}
+
+void MetododeShell(int arr[], int h){
+	int cen;
+	int i;
+	int k=h+1;
+	while(k>1){
+		k=k/2;
+		cen=1;
+		while(cen==1){
+			cen=0;
+			i=0;
+			while(i+k<h){
+				if(arr[i+k]<arr[i]){
+					int aux;
+					aux=arr[i];
+					arr[i]=arr[i+k];
+					arr[i+k]=aux;
+					cen=1;
+				}
+				i=i+1;
+			}
+		}
+	}
+	cout<<endl;
+	for(int i=0; i<h; i++){
 		cout<<arr[i]<<" ";
 	}
 	cout<<endl;
@@ -187,7 +216,8 @@ int main(){
         cout<<"5) Intercambio Seleccion directa. "<<endl;
         cout<<"6) Intercambio Insercion directa. "<<endl;
         cout<<"7) Intercambio Insercion binaria. "<<endl;
-		cout<<"7) Salir del programa. "<<endl;
+        cout<<"8) Intercambio por metodo de shell. "<<endl;
+		cout<<"9) Salir del programa. "<<endl;
         cout<<endl;
         cout<<"Ingrese la opcion que desea: ";
         cin>>op;
@@ -215,6 +245,9 @@ int main(){
         		Insercionbinaria(arr, n);
         		break;
         	case 8:
+        		MetododeShell(arr, n);
+        		break;
+        	case 9:
         		cout<<endl; 
         		cout<<"-------------------SALIENDO DEL PROGRAMA-------------------"<<endl;
         		return 0;
